@@ -13,9 +13,9 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - docker/check:
-          docker-username: DOCKER_LOGIN # if you use different env var names to push this image to docker hub, please change here
-          docker-password: DOCKER_PASSWORD # if you use different env var names to push this image to docker hub, please change here
+      - docker/check
+      #    docker-username: DOCKER_LOGIN # if you use different env var names to push this image to docker hub, please change here
+      #    docker-password: DOCKER_PASSWORD # if you use different env var names to push this image to docker hub, please change here
       - docker/build:
           image: $DOCKER_IMAGE
           tag: $DOCKER_TAG
