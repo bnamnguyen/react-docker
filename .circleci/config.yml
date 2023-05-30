@@ -13,10 +13,10 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - docker/check: 
-        # if you use different env var names to push this image to docker hub, please change here
-        docker-username: DOCKER_LOGIN
-        docker-password: DOCKER_PASSWORD
+      - docker/check
+      #- docker/check:
+          #docker-username: <username in environment variables inside circleci settings>
+          #docker-password: <password in environment variables inside circleci settings>
       - docker/build:
           image: $DOCKER_IMAGE
           tag: $DOCKER_TAG
