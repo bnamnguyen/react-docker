@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       <h1> Hello ReactJs! </h1>
-      <a className="App-link" href="/">This is my demo for CI/CD using CircleCI, Github, Docker, Dockerhub and I just imported the environment variables.</a>
+      <a className="App-link" href="/">BiBi, this is my demo for CI/CD using CircleCI, Github, Docker, Dockerhub and I just imported the environment variables.</a>
       </header>
     </div>
   );
