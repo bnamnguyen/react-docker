@@ -31,10 +31,16 @@ jobs:
     executor: docker/docker
     steps:
       # Please add $SSH_KEY_FINGERPRINT, $DEPLOYED_USER@ and DEPLOYED_SERVER to project's environment
+
       - add_ssh_keys:
           fingerprints:
-            - $SSH_KEY_FINGERPRINT
-      - run: ssh -oStrictHostKeyChecking=no $DEPLOYED_USER@$DEPLOYED_SERVER './deploy.sh'
+            - "1f:c1:c9:03:e5:4e:4e:b6:5c:cc:30:09:c6:aa:85:93"
+      - run: ssh -oStrictHostKeyChecking=no root@138.197.145.50 './deploy.sh'
+
+      #- add_ssh_keys:
+      #    fingerprints:
+      #      - $SSH_KEY_FINGERPRINT
+      #- run: ssh -oStrictHostKeyChecking=no $DEPLOYED_USER@$DEPLOYED_SERVER './deploy.sh'
 
 workflows:
   my-pipeline:
@@ -48,6 +54,6 @@ workflows:
               only:
                 - main
       # uncomment the 3 following lines to enable deploying
-      # - deploy:
-      #     requires:
-      #       - build-and-push
+      - deploy:
+          requires:
+            - build-and-push
