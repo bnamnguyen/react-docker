@@ -35,7 +35,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "1f:c1:c9:03:e5:4e:4e:b6:5c:cc:30:09:c6:aa:85:93"
-      - run: ssh -oStrictHostKeyChecking=no root@138.197.145.50 './deploy.sh'
+      - run: ssh -oStrictHostKeyChecking=no root@138.197.145.50 './var/www/html/react-docker/deploy.sh'
 
       #- add_ssh_keys:
       #    fingerprints:
