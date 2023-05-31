@@ -34,13 +34,13 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - "1f:c1:c9:03:e5:4e:4e:b6:5c:cc:30:09:c6:aa:85:93"
-      - run: ssh -oStrictHostKeyChecking=no root@138.197.145.50 './var/www/html/react-docker/deploy.sh'
+            - "e6:ed:1e:54:6c:e9:60:b1:42:e0:d9:73:b0:b7:d3:3d"
+      - run: ssh -oStrictHostKeyChecking=no root@138.197.145.50 './deploy.sh'
 
       #- add_ssh_keys:
       #    fingerprints:
       #      - $SSH_KEY_FINGERPRINT
-      #- run: ssh -oStrictHostKeyChecking=no $DEPLOYED_USER@$DEPLOYED_SERVER './var/www/html/react-docker/deploy.sh'
+      #- run: ssh -oStrictHostKeyChecking=no $DEPLOYED_USER@$DEPLOYED_SERVER './deploy.sh'
 
 workflows:
   my-pipeline:
