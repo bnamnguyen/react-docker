@@ -13,8 +13,8 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - docker/check
-      #- docker/check:
+      - docker/check # check is an option below page, review it to see the related options
+      #- docker/check: # uncomment below lines if you use other variables rather than default ones
           #docker-username: <username in environment variables inside circleci settings>
           #docker-password: <password in environment variables inside circleci settings>
       - docker/build:
@@ -31,6 +31,7 @@ jobs:
     executor: docker/docker
     steps:
       # Please add $SSH_KEY_FINGERPRINT, $DEPLOYED_USER@ and DEPLOYED_SERVER to project's environment
+      # SSH_KEY_FINGERPRINT is the fingerprint of the SSH key here: https://app.circleci.com/settings/project/github/<your username>/react-docker/ssh, add private key to this place to get the fingerprint to let CircleCI connect to the server to run deloy.sh
       - add_ssh_keys:
          fingerprints:
            - $SSH_KEY_FINGERPRINT
